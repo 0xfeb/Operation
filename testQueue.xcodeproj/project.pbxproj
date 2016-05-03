@@ -15,6 +15,8 @@
 		6C2BEE1A1CD87479007492D3 /* testQueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2BEE191CD87479007492D3 /* testQueueTests.swift */; };
 		6C2BEE251CD87481007492D3 /* CLMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2BEE241CD87481007492D3 /* CLMethod.swift */; };
 		6C2BEE271CD874E7007492D3 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2BEE261CD874E7007492D3 /* TestViewController.swift */; };
+		6C2F5A1D1CD8ACCB001AB3B2 /* CLData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2F5A1C1CD8ACCB001AB3B2 /* CLData.swift */; };
+		6C2F5A1F1CD8E427001AB3B2 /* CLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2F5A1E1CD8E427001AB3B2 /* CLRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		6C2BEE1B1CD87479007492D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C2BEE241CD87481007492D3 /* CLMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLMethod.swift; sourceTree = "<group>"; };
 		6C2BEE261CD874E7007492D3 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		6C2F5A1C1CD8ACCB001AB3B2 /* CLData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLData.swift; sourceTree = "<group>"; };
+		6C2F5A1E1CD8E427001AB3B2 /* CLRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,8 @@
 				6C2BEE0D1CD87479007492D3 /* LaunchScreen.storyboard */,
 				6C2BEE101CD87479007492D3 /* Info.plist */,
 				6C2BEE241CD87481007492D3 /* CLMethod.swift */,
+				6C2F5A1E1CD8E427001AB3B2 /* CLRequest.swift */,
+				6C2F5A1C1CD8ACCB001AB3B2 /* CLData.swift */,
 				6C2BEE261CD874E7007492D3 /* TestViewController.swift */,
 			);
 			path = testQueue;
@@ -203,7 +209,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C2F5A1D1CD8ACCB001AB3B2 /* CLData.swift in Sources */,
 				6C2BEE071CD87479007492D3 /* ViewController.swift in Sources */,
+				6C2F5A1F1CD8E427001AB3B2 /* CLRequest.swift in Sources */,
 				6C2BEE251CD87481007492D3 /* CLMethod.swift in Sources */,
 				6C2BEE271CD874E7007492D3 /* TestViewController.swift in Sources */,
 				6C2BEE051CD87479007492D3 /* AppDelegate.swift in Sources */,

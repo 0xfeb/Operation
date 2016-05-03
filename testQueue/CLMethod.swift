@@ -9,7 +9,7 @@
 import Foundation
 
 class CLMethod<T> {
-    var queue:NSOperationQueue!
+    var queue:NSOperationQueue
     var method:()->T? = { nil }
     
     init(queue:NSOperationQueue, method:()->T?) {
@@ -28,8 +28,13 @@ class CLMethod<T> {
     }
 }
 
+
 extension NSOperationQueue {
     func addMethod<T>(method:()->T?) -> CLMethod<T> {
         return CLMethod(queue: self, method: method)
     }
 }
+
+
+
+
