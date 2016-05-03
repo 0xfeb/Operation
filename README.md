@@ -8,7 +8,7 @@ let queue = NSOperationQueue()
 
 
 //操作方法(使用链式方法)
-queue.addMetho(...).response(...)
+queue.addMethod(...).response(...)
 
 //例子:依次读取各个网站并且获得内容填入
 //说明, 为简单起见, 未加异常处理
