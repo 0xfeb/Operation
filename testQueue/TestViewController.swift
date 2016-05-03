@@ -48,6 +48,21 @@ class TestViewController: UIViewController {
             .imageReponse{
                 self.imageView.image = $0
         }
+        
+        //使用Client模式
+        //NSOperationQueue.setClientBaseURL("http://www.aaa.com/interface/")
+        //NSOperationQueue.setClientCommonParameters(["token":"aaaa"])
+        queue.cacheClient()
+            .GET("http://www.baidu.com/")
+            .stringResponse{
+                self.contentText.text = $0
+            }.GET("http://www.weather.com.cn/data/sk/101010100.html")
+            .jsonDictResponse{
+                self.tempText.text = $0?["weatherinfo"]?["temp"] as? String
+            }.GET("http://image.wangchao.net.cn/small/product/1280556179293.jpg")
+            .imageReponse{
+                self.imageView.image = $0
+        }
     }
 
     override func didReceiveMemoryWarning() {

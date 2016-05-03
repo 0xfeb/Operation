@@ -156,7 +156,45 @@ extension NSURLSession {
     }
 }
 
+class CLRequestClient {
+    var session:NSURLSession
+    static var baseURL = ""
+    static var shareParameters:[String:String] = [:]
+    
+    init(session:NSURLSession) {
+        self.session = session
+    }
+    
+    func getParameters(parameters:[String:String]) -> [String:String] {
+        var param = parameters
+        CLRequestClient.shareParameters.forEach{ param[$0.0] = $0.1 }
+        return param
+    }
+    
+    func getURL(url:String) -> String {
+        let urlGap = CLRequestClient.baseURL.isEmpty||CLRequestClient.baseURL.hasSuffix("/") ? "" : "/"
+        return CLRequestClient.baseURL + urlGap + url
+    }
+    
+    func POST(url:String, _ parameters:[String:String] = [:]) -> CLRequest {
+        return session.POST(getURL(url), getParameters(parameters))
+    }
+    
+    func GET(url:String, _ parameters:[String:String] = [:]) -> CLRequest {
+        return session.GET(getURL(url), getParameters(parameters))
+    }
+    
+    func DELETE(url:String, _ parameters:[String:String] = [:]) -> CLRequest {
+        return session.DELETE(getURL(url), getParameters(parameters))
+    }
+    
+    func OPTION(url:String, _ parameters:[String:String] = [:]) -> CLRequest {
+        return session.OPTION(getURL(url), getParameters(parameters))
+    }
+}
+
 extension NSOperationQueue {
+    //MARK:Session
     func realTimeSession() -> NSURLSession {
         let config = NSURLSessionConfiguration.ephemeralSessionConfiguration()
         return NSURLSession(configuration: config, delegate: nil, delegateQueue: self)
@@ -167,5 +205,21 @@ extension NSOperationQueue {
         return NSURLSession(configuration: config, delegate: nil, delegateQueue: self)
     }
 
+    //MARK:Client
+    func realTimeClient() -> CLRequestClient {
+        return CLRequestClient(session: realTimeSession())
+    }
+    
+    func cacheClient() -> CLRequestClient {
+        return CLRequestClient(session: cacheSession())
+    }
+    
+    static func setClientBaseURL(url:String) {
+        CLRequestClient.baseURL = url
+    }
+    
+    static func setClientCommonParameters(parameters:[String:String]) {
+        CLRequestClient.shareParameters = parameters
+    }
 }
 
